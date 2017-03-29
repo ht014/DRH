@@ -10,7 +10,7 @@ caffe.set_mode_gpu()
 caffe.set_device(0)
 solver = None
 solver = caffe.SGDSolver('prototxts/solver.pt')
-MAX = 50
+MAX = 5000
 for i in xrange(MAX):
     solver.step(1)
 
