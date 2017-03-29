@@ -1,0 +1,62 @@
+name: "DH"
+
+layer{
+  name: "input"
+  type: "Python"
+  top: "data"
+   python_param {
+      module: 'data'
+      layer:  "LMDBData"
+   }
+}
+
+layer {
+  name: "h3"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "h3"
+  param { lr_mult: 1.0 }
+  param { lr_mult: 0.0 }
+  inner_product_param {
+     num_output: 512
+     weight_filler {
+     type: "gaussian"
+         std: 0.0015
+    }
+     bias_filler {
+         type: "constant"
+         value: 0
+   }
+  }
+}
+
+layer {
+   name: "tanh3"
+   type: "TanH"
+   bottom: "h3"
+   top: "tanh3"
+  }
+layer {
+  name: "B"
+  type: "Python"
+  bottom: "tanh3"
+  top: "B"
+  python_param {
+    module: 'dh.sgn'
+    layer: 'Sgn'
+  }
+}
+layer{
+  name: "hash_loss"
+  type: "Python"
+  bottom:"B"
+  bottom:"tanh3"
+  top: "hash_loss"
+  #propagate_down: 0
+   python_param {
+      module: 'dh.loss'
+   layer: 'DHLoss'
+   }
+    loss_weight:1
+  }
+

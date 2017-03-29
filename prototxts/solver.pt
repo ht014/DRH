@@ -1,0 +1,11 @@
+net: "prototxts/hash_1024.pt"
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "inv"
+gamma: 0.0001
+power: 0.75
+display: 100
+snapshot: 1
+snapshot_prefix: "models/dh_mac_1024"
+solver_mode: CPU
