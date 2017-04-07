@@ -1,7 +1,7 @@
 <h1> DRH: Deep Region Hashing for Efficient Large-scale Instance Search from Images</h1>
 <p> Here we provide the code for our paper </p>
 <pre> Deep Region Hashing for Efficient Large-scale Instance Search from Images <br>
-Jingkuan Song, Tao He, Lianli Gao, Xing Xu, Heng Tao Shen. <a href="https://arxiv.org/abs/1701.07901">Archive </a>
+Jingkuan Song, Tao He, Lianli Gao*, Xing Xu, Heng Tao Shen. <a href="https://arxiv.org/abs/1701.07901">Archive </a>
 </pre>
 
 <p>Run this code:</p>
