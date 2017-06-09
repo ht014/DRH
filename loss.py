@@ -8,7 +8,7 @@ class DHLoss(caffe.Layer):
         self.diff = np.zeros_like(bottom[0].data,dtype=np.float32)
 
     def setup(self, bottom, top):
-        self.lamd1 = 10.
+        self.lamd1 = 10.  # you can change lamd value to balance the loss.
 
     def forward(self, bottom, top):
         self.diff[...] = bottom[0].data-bottom[1].data-self.lamd1*bottom[1].data
