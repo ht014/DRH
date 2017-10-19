@@ -27,7 +27,7 @@ is_LQE=False
 R_N = 400
 QE_N = 7
 LQE_N= 7
-_N = 20   #for choose best LQE_N
+_N = 20   # choose best LQE_N
 ####################################################
 
 caffe.set_mode_gpu()
